@@ -108,13 +108,19 @@ def main():
     selected_model = st.selectbox("Select Model:", model_options)
     st.session_state.openai_model = selected_model
 
-    if selected_model == "fine-tuned gpt3.5":
+    if selected_model == "gpt-3.5-turbo":
         selected_model = st.session_state.finetuned_gpt_key
         st.session_state.openai_model = st.session_state.finetuned_gpt_key
 
-    if selected_model == "fine-tuned davinci-002":
+    elif selected_model == "fine-tuned davinci-002":
         selected_model = st.session_state.finetuned_dv02
         st.session_state.openai_model = st.session_state.finetuned_dv02
+    
+    elif selected_model == "finetuned gpt3.5":
+        selected_model = "gpt-3.5-turbo"
+        st.session_state.openai_model = selected_model
+
+
 
     if "openai_model" not in st.session_state:
         st.session_state["openai_model"] = "gpt-3.5-turbo"
