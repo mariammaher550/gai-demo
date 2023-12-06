@@ -108,7 +108,7 @@ def main():
     selected_model = st.selectbox("Select Model:", model_options)
     st.session_state.openai_model = selected_model
 
-    if selected_model == "finetuned gpt3.5":
+    if selected_model == "fine-tuned gpt3.5":
         selected_model = st.session_state.finetuned_gpt_key
         st.session_state.openai_model = st.session_state.finetuned_gpt_key
 
